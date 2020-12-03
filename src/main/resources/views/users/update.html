@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Настройки пользователя</title>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-form.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/button.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1 align="center" class="header">Настройки пользователя "[[${view.getLogin()}]]"</h1>
+        <form method="POST" th:action="'/Users/Update/'+${view.getUserId()}" class="form-style">
+            <label for = "userSecondNameTi">Second name</label>
+            <input name="userSecondName" type="text" id="userSecondNameTi" th:value="${view.getSecondName()}">
+            <br>
+            <label for = "userFirstNameTi">First name</label>
+            <input name="userFirstName" type="text" id="userFirstNameTi" th:value = "${view.getFirstName()}">
+            <br>
+            <label for = "userMiddleNameTi">Middle name</label>
+            <input name="userMiddleName" type="text" id="userMiddleNameTi" th:value="${view.getMiddleName()}">
+            <br>
+            <label for="userRoleSt">Статус пользователя</label>
+            <select name="userRole" id="userRoleSt">
+                <option disabled>Выберите статус пользователя</option>
+                <option value="1">Заказчик</option>
+                <option value="2">Менеджер</option>
+                <option value="3">Мастер</option>
+                <option value="4">Заместитель директора</option>
+                <option value="5">Директор</option>
+            </select>
+            <br>
+            <label for = "userLoginTi">Login</label>
+            <input name="userLogin" type="text" id="userLoginTi" th:value="${view.getLogin()}">
+            <br>
+            <label for = "userPasswordTi">Password</label>
+            <input name="userPassword" type="password" id="userPasswordTi" th:value="${view.getUserpassword()}">
+            <br>
+            <input type="submit" value="Сохранить" class="button">
+            <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+        </form>
+    </body>
+</html>

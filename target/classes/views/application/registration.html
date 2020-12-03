@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Страница регистрации</title>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-form.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/button.css" type="text/css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <h1 align="center" class="header">Регистрация</h1>
+        <form th:method="POST" th:action="@{/Registration}" th:object="${entity}" class="form-style">
+            <label for = "userSecondNameTi">Second name</label>
+            <input th:field="*{secondName}" type="text" id="userSecondNameTi">
+            <br>
+            <label for = "userFirstNameTi">First name</label>
+            <input th:field="*{firstName}" type="text" id="userFirstNameTi">
+            <br>
+            <label for = "userMiddleNameTi">Middle name</label>
+            <input th:field="*{middleName}" type="text" id="userMiddleNameTi">
+            <br>
+            <label for = "userLoginTi">Login</label>
+            <input th:field="*{login}" type="text" id="userLoginTi">
+            <br>
+            <label for = "userPasswordTi">Password</label>
+            <input th:field="*{userpassword}" type="password" id="userPasswordTi">
+            <br>
+            <input type="submit" value="Сохранить" class="button">
+            <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+        </form>
+    </body>
+</html>

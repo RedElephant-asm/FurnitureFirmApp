@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add new person</title>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-form.css" type="text/css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <h1 align="center">Зарегистрировать пользователя</h1>
+        <form th:method="POST" th:action="@{/Users/Add}" th:object="${entity}" class="form-style-9">
+            <label for = "userSecondNameTi">Second name</label>
+            <input th:field="*{secondName}" type="text" id="userSecondNameTi">
+            <br>
+            <label for = "userFirstNameTi">First name</label>
+            <input th:field="*{firstName}" type="text" id="userFirstNameTi">
+            <br>
+            <label for = "userMiddleNameTi">Middle name</label>
+            <input th:field="*{middleName}" type="text" id="userMiddleNameTi">
+            <br>
+            <label for="userRoleSt">Статус пользователя</label>
+            <select th:field="*{roleId}" id="userRoleSt">
+                <option value="1">Заказчик</option>
+                <option value="2">Менеджер</option>
+                <option value="3">Мастер</option>
+                <option value="4">Заместитель директора</option>
+                <option value="5">Директор</option>
+            </select>
+            <br>
+            <label for = "userLoginTi">Login</label>
+            <input th:field="*{login}" type="text" id="userLoginTi">
+            <br>
+            <label for = "userPasswordTi">Password</label>
+            <input th:field="*{userpassword}" type="password" id="userPasswordTi">
+            <br>
+            <input type="submit" value="Register!">
+            <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+        </form>
+    </body>
+</html>

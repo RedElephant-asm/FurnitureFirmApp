@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home page</title>
+        <link href="/CSS/main-body.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-menu.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1 class="main-header">Домашняя страница</h1>
+        <h1 align="center" class="header">Hello, [[${view.getLogin()}]]!</h1>
+        <div id ="menu">
+            <ul>
+                <li><a href="/Users/All">Пользователи</a></li>
+                <li><a href="/Materials/All">Материалы</a></li>
+                <li><a href="/Furnitures/All">Фуринтура</a></li>
+                <li><a href="/Documentation">Документация</a></li>
+                <li >
+                    <form action="/logout" method="post">
+                        <input type="submit" value="Выход" id="exit"/>
+                        <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

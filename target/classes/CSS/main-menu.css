@@ -1,0 +1,69 @@
+
+/* Задаем ширину меню */
+#menu{
+    width:210px;
+    margin:15px;
+}
+/* Стили для наших пунктов меню */
+#menu ul{
+    list-style:none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#menu li{
+    list-style:none;
+    display:block;
+    line-height:32px;
+    height:32px;
+    margin:7px 0;
+    width:206px;
+}
+#menu li a{
+    display:block;
+    height:33px;
+    text-transform:uppercase;
+    font-size:16px;
+    font-weight:bold;
+    line-height:32px;
+    padding:0 0 0 25px;
+    text-decoration:none;
+    color:black;
+    background: #F8E391;
+    border:solid 1px black;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    text-align: left;
+}
+
+/* Подсветка наведденого пункта */
+#menu li a:hover{
+    background: #35C835;
+    color:#fff;
+}
+#exit{
+    display:block;
+    height:33px;
+    width:206px;
+    text-transform:uppercase;
+    height:32px;
+    font-size:16px;
+    font-weight:bold;
+    line-height:32px;
+    padding:0 0 0 25px;
+    text-decoration:none;
+    color:black;
+    background: #F8E391;
+    border:solid 1px black;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    text-align: left;
+    font-family: "Courier New", Serif;
+}
+
+#exit:hover{
+    background: #35C835;
+    color:#fff;
+}

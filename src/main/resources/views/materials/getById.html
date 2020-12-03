@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Material #[[${view.getMaterialId()}]]</title>
+        <link th:href="@{/CSS/table-format.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/button.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-menu.css" type="text/css" rel="stylesheet"/>
+
+    </head>
+    <body>
+        <h1 align="center" class="header">Материал "[[${view.getMaterialName()}]]"</h1>
+        <table border="3" bgcolor="#ffffff" align="center">
+            <tr>
+                <td>ID</td>
+                <td>[[${view.getMaterialId()}]]</td>
+            </tr>
+            <tr>
+                <td>Артикль</td>
+                <td>[[${view.getArticle()}]]</td>
+            </tr>
+            <tr>
+                <td>Единица измерения</td>
+                <td>[[${view.getMeasureName()}]]</td>
+            </tr>
+            <tr>
+                <td>Длина</td>
+                <td>[[${view.getLength()}]]</td>
+            </tr>
+            <tr>
+                <td>Количество</td>
+                <td>[[${view.getCount()}]]</td>
+            </tr>
+            <tr>
+                <td>Цена</td>
+                <td>[[${view.getPrice()}]]</td>
+            </tr>
+            <tr>
+                <td>Тип материала</td>
+                <td>[[${view.getMaterialTypeName()}]]</td>
+            </tr>
+            <tr>
+                <td>Гост</td>
+                <td>[[${view.getGostName()}]]</td>
+            </tr>
+            <tr>
+                <td>Требуемая специализация</td>
+                <td>[[${view.getSpecializationName()}]]</td>
+            </tr>
+        </table>
+        <div id="menu">
+            <ul>
+                <li><a th:href="@{/Materials/Update/{materialId}(materialId=${view.getMaterialId()})}">Настроить</a></li>
+                <li>
+                    <form th:action="@{/Materials/Delete/{materialId}(materialId=${view.getMaterialId()})}" method="POST">
+                        <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+                        <input type="submit" value="Удалить" align="center" class="button">
+                    </form>
+                </li>
+                <li><a th:href="@{/Materials/All}">Назад</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

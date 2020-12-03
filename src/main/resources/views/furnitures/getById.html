@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Furniture #[[${view.getFurnitureId()}]]</title>
+        <link th:href="@{/CSS/table-format.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/button.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-menu.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1 align="center" class="header">Фурнитура "[[${view.getFurnitureName()}]]"</h1>
+        <table align="center" bgcolor="#ffffff" border="3">
+            <tr>
+                <td>Артикле</td>
+                <td>[[${view.getArticle()}]]</td>
+            </tr>
+            <tr>
+                <td>Название фурнитуры</td>
+                <td>[[${view.getFurnitureName()}]]</td>
+            </tr>
+            <tr>
+                <td>Количество</td>
+                <td>[[${view.getCount()}]]</td>
+            </tr>
+            <tr>
+                <td>Единица измерения</td>
+                <td>[[${view.getMeasureName()}]]</td>
+            </tr>
+            <tr>
+                <td>Название фрагмента</td>
+                <td>[[${view.getFragmentTypeName()}]]</td>
+            </tr>
+            <tr>
+                <td>Цена</td>
+                <td>[[${view.getPrice()}]]</td>
+            </tr>
+        </table>
+        <div id="menu">
+            <ul>
+                <li><a th:href="@{/Furnitures/Update/{furnitureId}(furnitureId=${view.getFurnitureId()})}">Настроить</a></li>
+                <li>
+                    <form th:action="@{/Furnitures/Delete/{furnitureId}(furnitureId=${view.getFurnitureId()})}" method="POST">
+                        <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+                        <input type="submit" value="Удалить" align="center" class="button">
+                    </form>
+                </li>
+                <li><a th:href="@{/Furnitures/All}">Назад</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

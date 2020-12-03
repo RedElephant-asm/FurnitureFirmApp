@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>User #[[${view.getUserId()}]]</title>
+        <link th:href="@{/CSS/table-format.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/button.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-menu.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+    <h1 align="center" class="header">Пользователь "[[${view.getLogin()}]]"</h1>
+
+    <table align="center" bgcolor="#ffffff" border="3">
+        <tr>
+            <td>Фамилия</td>
+            <td>[[${view.getSecondName()}]]</td>
+        </tr>
+        <tr>
+            <td>Имя</td>
+            <td>[[${view.getFirstName()}]]</td>
+        </tr>
+        <tr>
+            <td>Отчество</td>
+            <td>[[${view.getMiddleName()}]]</td>
+        </tr>
+        <tr>
+            <td>Статус</td>
+            <td>[[${view.getRoleName()}]]</td>
+        </tr>
+        <tr>
+            <td>Пароль</td>
+            <td>[[${view.getUserpassword()}]]</td>
+        </tr>
+    </table>
+
+    <div id="menu">
+        <ul>
+            <li><a th:href="@{/Users/Update/{userId}(userId=${view.getUserId()})}">Настроить</a></li>
+            <li>
+                <form th:action="@{/Users/Delete/{userId}(userId=${view.getUserId()})}" method="POST">
+                    <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+                    <input type="submit" value="Удалить" align="center" class="button">
+                </form>
+            </li>
+            <li><a th:href="@{/Users/All}">Назад</a></li>
+        </ul>
+    </div>
+    </body>
+</html>

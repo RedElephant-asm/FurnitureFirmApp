@@ -1,0 +1,14 @@
+org.FurnitureFirmApp
+org.FurnitureFirmApp.appConfig
+org.FurnitureFirmApp.controllers
+org.FurnitureFirmApp.DAO.Furnitures
+org.FurnitureFirmApp.DAO.Materials
+org.FurnitureFirmApp.DAO.Users
+org.FurnitureFirmApp.models.CRUDControllerHandlers
+org.FurnitureFirmApp.models.DataHandlers
+org.FurnitureFirmApp.models.DataHandlers.RepositoryDataHandlers
+org.FurnitureFirmApp.models.Factory
+org.FurnitureFirmApp.models.Furnitures
+org.FurnitureFirmApp.models.Materials
+org.FurnitureFirmApp.models.Users
+org.FurnitureFirmApp.services

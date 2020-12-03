@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add material</title>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-form.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1 align="center" style="color:Purple">Добавить материал</h1>
+        <form action="/Materials/Add" method="POST" class="form-style-9">
+            <label for = "articleTi">Артикль</label>
+            <input name="article" type="text" id="articleTi">
+            <br>
+            <label for = "materialNameTi">Имя материала</label>
+            <input name="materialName" type="text" id="materialNameTi">
+            <br>
+            <label for="measureIdSt">Единица измерения</label>
+            <select name="measureId" id="measureIdSt">
+                <option disabled>Выберите единицу измерения</option>
+                <option value="1">шт</option>
+                <option value="2">м3</option>
+                <option value="3">м2</option>
+                <option value="4">м</option>
+                <option value="5">кг</option>
+                <option value="6">упак</option>
+                <option value="7">боб</option>
+                <option value="8">компл</option>
+                <option value="9">тыс шт</option>
+            </select >
+            <br>
+            <label for="lengthTi">Длина</label>
+            <input name="length" type="text" id="lengthTi">
+            <br>
+            <label for="countTi">Количество</label>
+            <input name="count" type="text" id="countTi">
+            <br>
+            <label for="priceTi">Стоимость</label>
+            <input name="price" type="text" id="priceTi">
+            <br>
+            <label for="materialTypeIdSt">Тип материала</label>
+            <select name="materialTypeId" id="materialTypeIdSt">
+                <option disabled>Выберите тип материала</option>
+                <option value="1">брус</option>
+                <option value="2">вагонка</option>
+                <option value="3">доска</option>
+                <option value="4">евровагонка</option>
+                <option value="5">зеркало</option>
+                <option value="6">стекло</option>
+                <option value="7">имитация бруса</option>
+                <option value="8">лак</option>
+                <option value="9">наличник</option>
+                <option value="10">плинтус</option>
+                <option value="11">рейки</option>
+                <option value="12">раскладка</option>
+                <option value="13">стекло</option>
+                <option value="14">уголое</option>
+                <option value="15">штапик</option>
+            </select>
+            <br>
+            <label for="gostIdSt">Гост</label>
+            <select name="gostId" id="gostIdSt">
+                <option disabled>Выберите гост</option>
+                <option value="1">ГОСТ 8486-86</option>
+                <option value="2">ГОСТ 4976?86</option>
+            </select>
+            <br>
+            <input type="submit" value="Register!">
+            <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+        </form>
+    </body>
+</html>

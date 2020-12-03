@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Список материалов</title>
+        <link th:href="@{/CSS/table-format.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/button.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1 align="center" class="header">Материалы</h1>
+        <form action="/Home" method="GET">
+            <input type="submit" value="Домашнаяя страница" class="button">
+        </form>
+        <table border="3" bgcolor="#ffffff" align="center">
+            <tr>
+                <th>ID</th>
+                <th>Артикль</th>
+                <th>Название материала</th>
+                <th>Единица измерения</th>
+                <th>Длина</th>
+                <th>Количество</th>
+                <th>Цена</th>
+                <th>Тип материала</th>
+                <th>Гост</th>
+                <th>Требуемая специализация</th>
+            </tr>
+            <div th:each = "view : ${viewList}">
+                <tr>
+                    <td>
+                        <a th:href = "@{/Materials/{materialId}(materialId = ${view.getMaterialId()})}"
+                           th:text ="${view.getMaterialId()}">Material
+                        </a>
+                    </td>
+                    <td>[[${view.getArticle()}]]</td>
+                    <td>[[${view.getMaterialName()}]]</td>
+                    <td>[[${view.getMeasureName()}]]</td>
+                    <td>[[${view.getLength()}]]</td>
+                    <td>[[${view.getCount()}]]</td>
+                    <td>[[${view.getPrice()}]]</td>
+                    <td>[[${view.getMaterialTypeName()}]]</td>
+                    <td>[[${view.getGostName()}]]</td>
+                    <td>[[${view.getSpecializationName()}]]</td>
+                </tr>
+            </div>
+        </table>
+        <div id="switchButtons">
+            <a th:href="@{/Materials/All/{pageNumber}(pageNumber = ${0})}"><<</a>
+            <a th:href="@{/Materials/All/{pageNumber}(pageNumber = ${currentPageNumber - 1})}"><</a>
+            <label style="color:#F8E391;">[[${currentPageNumber}]]</label>
+            <a th:href="@{/Materials/All/{pageNumber}(pageNumber = ${currentPageNumber + 1})}">></a>
+            <a th:href="@{/Materials/All/{pageNumber}(pageNumber = ${lastPageNumber})}">>></a>
+        </div>
+    </body>
+</html>

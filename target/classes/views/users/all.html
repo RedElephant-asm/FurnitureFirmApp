@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>All users</title>
+        <link th:href="@{/CSS/table-format.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/button.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1 align="center" class="header">Пользователи</h1>
+        <form action="/Home" method="GET">
+            <input type="submit" value="Домашнаяя страница" class="button">
+        </form>
+        <table border="3" bgcolor="#ffffff" align="center">
+            <tr>
+                <th>ID</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Статус</th>
+                <th>login</th>
+                <th>Пароль</th>
+            </tr>
+            <div th:each = "view : ${viewList}">
+                <tr>
+                    <td><a th:href = "@{/Users/{userId}(userId = ${view.getUserId()})}" th:text ="${view.getUserId()}">user</a></td>
+                    <td>[[${view.getSecondName()}]]</td>
+                    <td>[[${view.getFirstName()}]]</td>
+                    <td>[[${view.getMiddleName()}]]</td>
+                    <td>[[${view.getRoleName()}]]</td>
+                    <td>[[${view.getLogin()}]]</td>
+                    <td>[[${view.getUserpassword()}]]</td>
+                </tr>
+            </div>
+        </table>
+        <div id="switchButtons">
+            <a th:href="@{/Users/All/{pageNumber}(pageNumber = ${0})}"><<</a>
+            <a th:href="@{/Users/All/{pageNumber}(pageNumber = ${currentPageNumber - 1})}"><</a>
+            <label style="color:#F8E391;">[[${currentPageNumber}]]</label>
+            <a th:href="@{/Users/All/{pageNumber}(pageNumber = ${currentPageNumber + 1})}">></a>
+            <a th:href="@{/Users/All/{pageNumber}(pageNumber = ${lastPageNumber})}">>></a>
+        </div>
+    </body>
+</html>

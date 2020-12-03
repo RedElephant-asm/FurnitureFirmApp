@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Список фурнитуры</title>
+        <link th:href="@{/CSS/table-format.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/header.css" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/button.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1 align="center" class="header">Фурнитура</h1>
+        <form action="/Home" method="GET">
+            <input type="submit" value="Домашнаяя страница" class="button">
+        </form>
+        <table border="3" bgcolor="#ffffff" align="center">
+            <tr>
+                <th>ID</th>
+                <th>Артикль</th>
+                <th>Название фурнитуры</th>
+                <th>Количество</th>
+                <th>Единица измерения</th>
+                <th>Используемый фрагмент</th>
+                <th>Цена</th>
+            </tr>
+            <div th:each = "view : ${viewList}">
+                <tr>
+                    <td><a th:href = "@{/Furnitures/{furnitureId}(furnitureId = ${view.getFurnitureId()})}"
+                       th:text ="${view.getFurnitureId()}">Furniture</a>
+                    </td>
+                    <td>[[${view.getArticle()}]]</td>
+                    <td>[[${view.getFurnitureName()}]]</td>
+                    <td>[[${view.getCount()}]]</td>
+                    <td>[[${view.getMeasureName()}]]</td>
+                    <td>[[${view.getFragmentTypeName()}]]</td>
+                    <td>[[${view.getPrice()}]]</td>
+                </tr>
+            </div>
+        </table>
+        <div id="switchButtons">
+            <a th:href="@{/Furnitures/All/{pageNumber}(pageNumber = ${0})}"><<</a>
+            <a th:href="@{/Furnitures/All/{pageNumber}(pageNumber = ${currentPageNumber - 1})}"><</a>
+            <label style="color:#F8E391;">[[${currentPageNumber}]]</label>
+            <a th:href="@{/Furnitures/All/{pageNumber}(pageNumber = ${currentPageNumber + 1})}">></a>
+            <a th:href="@{/Furnitures/All/{pageNumber}(pageNumber = ${lastPageNumber})}">>></a>
+        </div>
+    </body>
+</html>

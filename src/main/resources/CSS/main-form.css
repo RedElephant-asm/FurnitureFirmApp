@@ -1,0 +1,18 @@
+.form-style{
+	max-width: 450px;
+	background: #F8E391;
+	padding: 30px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #305A72;
+	border:solid 1px black;}
+
+.form-style input{
+    height:33px;
+    width:206px;
+    border-radius:10px;}
+
+.form-style label{
+    height:33px;
+    width:206px;}

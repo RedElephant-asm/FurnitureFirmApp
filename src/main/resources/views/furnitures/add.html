@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Добавить фурнитуру</title>
+        <link th:href="@{/CSS/main-body.css}" type="text/css" rel="stylesheet"/>
+        <link href="/CSS/main-form.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1>Добавить пользователя</h1>
+        <form action="/Furnitures/Add" method="POST" class="form-style-9">
+            <label for="articleTi">Артикль</label>
+            <input name="article" type="text" id="articleTi">
+            <br>
+            <label for="furnitureNameTi">Название фурнитуры</label>
+            <input name="furnitureName" type="text" id="furnitureNameTi">
+            <br>
+            <label for="countTi">Количество</label>
+            <input name="count" type="text" id="countTi">
+            <br>
+            <label for="measureIdSt">Единица измерения</label>
+            <select name="measureId" id="measureIdSt">
+                <option disabled>Выберите единицу измерения</option>
+                <option value="1">шт</option>
+                <option value="2">м3</option>
+                <option value="3">м2</option>
+                <option value="4">м</option>
+                <option value="5">кг</option>
+                <option value="6">упак</option>
+                <option value="7">боб</option>
+                <option value="8">компл</option>
+                <option value="9">тыс шт</option>
+            </select >
+            <br>
+            <label for="fragmentTypeIdSt">Необходимый тип фрагмента</label>
+            <select name="fragmentTypeId" id="fragmentTypeIdSt">
+                <option disabled>Выберите тип фрагмента</option>
+                <option value="1">дюбель</option>
+                <option value="2">саморез</option>
+                <option value="3">евровинт</option>
+                <option value="4">винт</option>
+                <option value="5">петли</option>
+                <option value="6">гайка</option>
+                <option value="7">шайба</option>
+                <option value="8">шпилька</option>
+                <option value="9">заглушка</option>
+                <option value="10">уголки мебельные</option>
+                <option value="11">шканты</option>
+                <option value="12">крепления и соединители</option>
+                <option value="13">полкодепжатели</option>
+                <option value="14">опора</option>
+                <option value="15">подпятники</option>
+                <option value="16">навесы</option>
+            </select>
+            <br>
+            <label for="priceTi">Цена</label>
+            <input name="price" type="text" id="priceTi">
+            <input type="submit" value="Register!">
+            <input th:type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+        </form>
+    </body>
+</html>
