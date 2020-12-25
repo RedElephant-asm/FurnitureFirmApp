@@ -11,7 +11,8 @@ update, delete).
 
 ## Backend-часть проекта
 ![markdown logo](./mdfiles/images/logos/hibernate-logo.jpeg)</br>
-Для взаимодействия с базой данных применяется `Hibernate API`.
+Для взаимодействия с базой данных применяется `Hibernate API`. Дамп
+применяемой базы данных : `...\FurnitureFirmApp\dbdump.dump`.
 
 ## Frontend-часть проекта
 ![markdown logo](./mdfiles/images/logos/thymeleaf-logo.png)</br>
