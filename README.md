@@ -51,6 +51,7 @@ public class FurnitureFirmSpringBootApplication {
 LegacyDatetimeCode=false&serverTimezone=UTC
 2. spring.datasource.username=`Your mysql user name`
 3. spring.datasource.password=`Your mysql user password`
-4. spring.jpa.database-platform=org.hibernate.dialect.MySQL`Your mysql version`Dialect</br>
+4. spring.jpa.database-platform=org.hibernate.dialect.MySQL`Your mysql version`Dialect
+
 После старта проекта, обратиться к нему можно по адресу
 `http://localhost:8080`
