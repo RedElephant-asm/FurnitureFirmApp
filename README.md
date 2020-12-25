@@ -26,6 +26,10 @@ update, delete).
 ## Ajax
 Ajax запросы у приложения отсутствуют.
 
+## Документация
+![markdown logo](./mdfiles/images/logos/javadoc-logo.png)
+У проекта имеется javadoc.
+
 ## Запуск проекта
 ![markdown logo](./mdfiles/images/logos/maven-logo.png)</br>
 Так как у проекта есть POM, он может быть запущен с помощью
@@ -56,3 +60,27 @@ LegacyDatetimeCode=false&serverTimezone=UTC
 
 После старта проекта, обратиться к нему можно по адресу
 `http://localhost:8080`
+
+Профиль пользователя, наделенного всеми возможными правами:
+1. User Name: `root`
+2. Password: `root`
+
+## Пользовательские страницы
+### Страница регистрации
+![markdown logo](./mdfiles/images/userScreens/login-screen.png)
+### Страница авторизации
+![markdown logo](./mdfiles/images/userScreens/registration-screen.png)
+### Домашняя страница
+![markdown logo](./mdfiles/images/userScreens/home-page-screen.png)
+### Страница пользователей
+![markdown logo](./mdfiles/images/userScreens/users-table-screen.png)
+### Страница материалов
+![markdown logo](./mdfiles/images/userScreens/material-table-screen.png)
+### Страница фурнитуры
+![markdown logo](./mdfiles/images/userScreens/furniture-table-screen.png)
+### Страница пользователя
+![markdown logo](./mdfiles/images/userScreens/user-page-screen.png)
+### Страница обновления пользователя
+![markdown logo](./mdfiles/images/userScreens/user-update-screen.png)
+### Страница документации
+![markdown logo](./mdfiles/images/userScreens/documentation-screen.png)
