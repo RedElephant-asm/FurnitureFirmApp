@@ -27,7 +27,7 @@ update, delete).
 Ajax запросы у приложения отсутствуют.
 
 ## Документация
-![markdown logo](./mdfiles/images/logos/javadoc-logo.png)
+![markdown logo](./mdfiles/images/logos/javadoc-logo.png)</br>
 У проекта имеется javadoc.
 
 ## Запуск проекта
