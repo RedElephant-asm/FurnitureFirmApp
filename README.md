@@ -14,7 +14,7 @@ update, delete).
 Для взаимодействия с базой данных применяется `Hibernate API`.
 
 ## Frontend-часть проекта
-![markdown logo](./mdfiles/images/logos/thymeleaf-logo.png)
+![markdown logo](./mdfiles/images/logos/thymeleaf-logo.png)</br>
 Чётко выраженная frontend-часть у проекта отсутствует. Вместо нее
 применяется шаблонизатор `Thymeleaf`.
 
