@@ -1,7 +1,7 @@
 # Furniture firm
 ## Simple spring boot app
 
-![markdown logo](./mdfiles/images/logos/spring-boot-logo.png)
+![markdown logo](./mdfiles/images/logos/spring-boot-logo.png)</br>
 
 Веб приложение предполагает взаимодействие с базой
 данных, содержащей информацию о некой мебельной
@@ -10,7 +10,7 @@
 update, delete).
 
 ## Backend-часть проекта
-![markdown logo](./mdfiles/images/logos/hibernate-logo.jpeg)
+![markdown logo](./mdfiles/images/logos/hibernate-logo.jpeg)</br>
 Для взаимодействия с базой данных применяется `Hibernate API`.
 
 ## Frontend-часть проекта
@@ -26,7 +26,7 @@ update, delete).
 Ajax запросы у приложения отсутствуют.
 
 ## Запуск проекта
-![markdown logo](./mdfiles/images/logos/maven-logo.png)
+![markdown logo](./mdfiles/images/logos/maven-logo.png)</br>
 Так как у проекта есть POM, он может быть запущен с помощью
 Maven из командной строки
 ```
