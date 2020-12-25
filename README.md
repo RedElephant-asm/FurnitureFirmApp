@@ -42,5 +42,15 @@ public class FurnitureFirmSpringBootApplication {
     }
 }
 ```
+При запуске необходимо убедиться, что запущен mysqld, а параметры
+для взаимодействия backend-части с БД в конфигурационном файле
+`...\FurnitureFirmApp\src\main\resources\application.properties`
+настроены в соответствии с параметрами местного mysqld.</br>
+1. spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/
+`Your mysql database name`?useUnicode=true&useJDBCCompliantTimezoneShift=true&use
+LegacyDatetimeCode=false&serverTimezone=UTC
+2. spring.datasource.username=`Your mysql user name`
+3. spring.datasource.password=`Your mysql user password`
+4. spring.jpa.database-platform=org.hibernate.dialect.MySQL`Your mysql version`Dialect
 После старта проекта, обратиться к нему можно по адресу
 `http://localhost:8080`
